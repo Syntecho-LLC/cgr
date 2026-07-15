@@ -26,7 +26,7 @@ export function ValueProps() {
               poster="/images/valueprop-poster.jpg"
               aria-label="California Garage Door Repair crew arriving in Los Angeles, repairing a garage door and shaking hands"
             >
-              <source src="/videos/crew-la.mp4" type="video/mp4" />
+              <source src="/videos/crew-la-fast.mp4" type="video/mp4" />
             </video>
           </Reveal>
 
