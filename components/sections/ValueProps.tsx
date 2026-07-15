@@ -28,17 +28,6 @@ export function ValueProps() {
             >
               <source src="/videos/crew-la.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/35 to-navy-950/5" />
-            <div className="relative z-10 flex h-full flex-col justify-end p-7">
-              <span className="mb-3 inline-flex w-fit items-center gap-2 rounded-full bg-white/12 px-3 py-1 text-xs font-bold text-white ring-1 ring-white/25 backdrop-blur">
-                <span className="size-1.5 rounded-full bg-red-emergency animate-pulse" /> Los Angeles · On the Road Now
-              </span>
-              <h3 className="font-heading text-xl font-bold text-white">Real Local Crews, Job Done Right</h3>
-              <p className="mt-2 leading-relaxed text-slate-200">
-                Watch our licensed technicians arrive, repair and shake on a job well done — across
-                Los Angeles and all of California.
-              </p>
-            </div>
           </Reveal>
 
           {VALUE_PROPS.map((v, i) => (
