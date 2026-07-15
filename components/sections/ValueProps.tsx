@@ -15,7 +15,7 @@ export function ValueProps() {
 
         <div className="mt-12 flex flex-wrap justify-center gap-5">
           {/* Featured video card — real LA crews */}
-          <Reveal className="group relative w-full min-h-[320px] overflow-hidden rounded-[var(--radius-card)] ring-1 ring-navy-900 shadow-[var(--shadow-card)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]">
+          <Reveal className="relative w-full min-h-[320px] overflow-hidden rounded-[var(--radius-card)] ring-1 ring-navy-900 shadow-[var(--shadow-card)] sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]">
             <video
               className="absolute inset-0 h-full w-full object-cover"
               autoPlay
@@ -34,7 +34,7 @@ export function ValueProps() {
             <Reveal
               key={v.title}
               delay={i * 60}
-              className={`group w-full rounded-[var(--radius-card)] p-7 ring-1 transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] ${
+              className={`w-full rounded-[var(--radius-card)] p-7 ring-1 sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] ${
                 v.featured
                   ? "bg-navy-950 text-white ring-navy-900"
                   : "bg-white ring-slate-200 shadow-[var(--shadow-card)]"
@@ -46,7 +46,7 @@ export function ValueProps() {
                   alt=""
                   fill
                   sizes="64px"
-                  className="object-contain drop-shadow-[0_8px_16px_rgba(37,99,235,0.25)] transition-transform duration-300 group-hover:scale-110"
+                  className="object-contain drop-shadow-[0_8px_16px_rgba(37,99,235,0.25)]"
                 />
               </div>
               <h3

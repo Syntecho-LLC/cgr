@@ -17,7 +17,7 @@ export function Technicians() {
           {TECHNICIANS.map((t) => (
             <article
               key={t.name}
-              className="group w-[260px] shrink-0 snap-start overflow-hidden rounded-[var(--radius-card)] bg-white ring-1 ring-slate-200 shadow-[var(--shadow-card)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] lg:w-auto"
+              className="w-[260px] shrink-0 snap-start overflow-hidden rounded-[var(--radius-card)] bg-white ring-1 ring-slate-200 shadow-[var(--shadow-card)] lg:w-auto"
             >
               <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
@@ -25,7 +25,7 @@ export function Technicians() {
                   alt={`${t.name}, ${t.role} at CGR`}
                   fill
                   sizes="260px"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover"
                 />
                 <span className="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-bold text-slate-900 backdrop-blur">
                   <ShieldCheck className="size-3.5 text-success" /> {t.badge}

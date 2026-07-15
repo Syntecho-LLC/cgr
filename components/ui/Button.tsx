@@ -15,11 +15,11 @@ const sizes: Record<Size, string> = {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-blue-primary text-white shadow-[var(--shadow-btn)] hover:bg-blue-primary-hover hover:-translate-y-0.5 active:translate-y-0",
+    "btn-shine btn-stroke shine-fill-blue text-white shadow-[var(--shadow-btn)]",
   emergency:
-    "bg-red-emergency text-white shadow-[var(--shadow-btn-red)] hover:bg-red-emergency-hover hover:-translate-y-0.5 active:translate-y-0",
+    "btn-shine btn-stroke shine-fill-red text-white shadow-[var(--shadow-btn-red)]",
   outline:
-    "border-2 border-white/70 text-white hover:bg-white hover:text-navy-950 backdrop-blur-sm",
+    "btn-shine btn-stroke border-2 border-white/50 text-white hover:bg-white/10 backdrop-blur-sm",
   ghost:
     "text-slate-900 hover:bg-slate-200/70",
   link:
@@ -48,8 +48,10 @@ export function Button({
       disabled={loading || rest.disabled}
       {...rest}
     >
-      {loading && <Loader2 className="size-[18px] animate-spin" aria-hidden />}
-      {children}
+      <span className="relative z-[2] inline-flex items-center justify-center gap-2">
+        {loading && <Loader2 className="size-[18px] animate-spin" aria-hidden />}
+        {children}
+      </span>
     </button>
   );
 }
@@ -68,7 +70,9 @@ export function ButtonLink({
       className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
       {...rest}
     >
-      {children}
+      <span className="relative z-[2] inline-flex items-center justify-center gap-2">
+        {children}
+      </span>
     </Link>
   );
 }

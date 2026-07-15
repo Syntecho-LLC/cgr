@@ -67,10 +67,10 @@ export function SocialProof() {
                 className="group relative aspect-video overflow-hidden rounded-[var(--radius-card)] text-left ring-1 ring-slate-200 shadow-[var(--shadow-card)]"
                 aria-label={`Play video testimonial from ${v.name}, ${v.city}`}
               >
-                <Image src={v.poster} alt="" fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                <Image src={v.poster} alt="" fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-navy-950/20 to-transparent" />
                 <span className="absolute inset-0 grid place-items-center">
-                  <span className="grid size-16 place-items-center rounded-full bg-white/90 text-blue-primary shadow-lg transition-transform group-hover:scale-110">
+                  <span className="grid size-16 place-items-center rounded-full bg-white/90 text-blue-primary shadow-lg">
                     <Play className="size-7 translate-x-0.5 fill-current" />
                   </span>
                 </span>

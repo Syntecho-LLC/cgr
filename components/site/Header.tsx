@@ -81,7 +81,7 @@ export function Header() {
 
           <a
             href={COMPANY.phoneHref}
-            className="lg:hidden grid size-11 place-items-center rounded-xl bg-red-emergency text-white shadow-[var(--shadow-btn-red)]"
+            className="btn-shine btn-stroke shine-fill-red lg:hidden grid size-11 place-items-center rounded-xl text-white shadow-[var(--shadow-btn-red)]"
             aria-label={`Call ${COMPANY.phone}`}
           >
             <Phone className="size-5" />

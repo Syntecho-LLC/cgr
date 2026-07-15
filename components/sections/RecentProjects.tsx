@@ -41,7 +41,7 @@ export function RecentProjects() {
           {visible.map((p) => (
             <article
               key={p.title}
-              className="group overflow-hidden rounded-[var(--radius-card)] bg-white ring-1 ring-slate-200 shadow-[var(--shadow-card)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+              className="overflow-hidden rounded-[var(--radius-card)] bg-white ring-1 ring-slate-200 shadow-[var(--shadow-card)]"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
@@ -49,7 +49,7 @@ export function RecentProjects() {
                   alt={`${p.service} in ${p.city}`}
                   fill
                   sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover"
                 />
                 <span className="absolute left-4 top-4 rounded-full bg-navy-950/80 px-3 py-1 text-xs font-bold text-white backdrop-blur">
                   {p.category}

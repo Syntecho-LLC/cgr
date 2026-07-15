@@ -151,6 +151,74 @@
   transform: none;
 }
 
+/* ============================================================
+   Buttons — shimmering fill + moving sheen + shimmering stroke
+   ============================================================ */
+@keyframes btn-pan {
+  to { background-position: -200% 0; }
+}
+@keyframes btn-sheen {
+  0% { transform: translateX(-160%) skewX(-14deg); }
+  55%, 100% { transform: translateX(320%) skewX(-14deg); }
+}
+
+/* Moving diagonal light sweep across the button */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: translateX(-160%) skewX(-14deg);
+  animation: btn-sheen 3.6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Shimmering gradient stroke (animated border ring via mask) */
+.btn-stroke::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.8px;
+  background: linear-gradient(
+    110deg,
+    rgba(147, 197, 253, 0),
+    rgba(191, 219, 254, 0.95),
+    rgba(255, 255, 255, 0.98),
+    rgba(147, 197, 253, 0.95),
+    rgba(147, 197, 253, 0)
+  );
+  background-size: 200% 100%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: btn-pan 3s linear infinite;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Animated gradient fills */
+.shine-fill-blue {
+  background: linear-gradient(110deg, #1d4ed8, #2563eb, #3b82f6, #2563eb, #1d4ed8);
+  background-size: 200% 100%;
+  animation: btn-pan 3.6s linear infinite;
+}
+.shine-fill-red {
+  background: linear-gradient(110deg, #d92f3c, #ef3f4c, #ff5b67, #ef3f4c, #d92f3c);
+  background-size: 200% 100%;
+  animation: btn-pan 3.6s linear infinite;
+}
+
 .marquee-track {
   animation: marquee 32s linear infinite;
 }

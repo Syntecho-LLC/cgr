@@ -54,10 +54,10 @@ export function LocationSearch() {
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex h-13 items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-blue-primary px-6 font-heading font-bold text-white shadow-[var(--shadow-btn)] transition hover:bg-blue-primary-hover"
+                  className="btn-shine btn-stroke shine-fill-blue inline-flex h-13 items-center justify-center gap-2 rounded-[var(--radius-btn)] px-6 font-heading font-bold text-white shadow-[var(--shadow-btn)]"
                   style={{ height: 52 }}
                 >
-                  <Search className="size-[18px]" aria-hidden /> Check Availability
+                  <span className="relative z-[2] inline-flex items-center gap-2"><Search className="size-[18px]" aria-hidden /> Check Availability</span>
                 </button>
               </div>
               <p id="zip-msg" className="mt-2.5 min-h-5 text-sm" aria-live="polite">
@@ -150,9 +150,9 @@ export function LocationSearch() {
 
               <a
                 href={COMPANY.phoneHref}
-                className="mt-auto inline-flex h-12 w-full items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-white/10 font-heading font-bold text-white ring-1 ring-white/20 backdrop-blur transition hover:bg-white/15"
+                className="btn-shine btn-stroke mt-auto inline-flex h-12 w-full items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-white/10 font-heading font-bold text-white ring-1 ring-white/20 backdrop-blur"
               >
-                <Phone className="size-[18px]" /> Talk to dispatch — {COMPANY.phone}
+                <span className="relative z-[2] inline-flex items-center gap-2"><Phone className="size-[18px]" /> Talk to dispatch — {COMPANY.phone}</span>
               </a>
             </div>
           </div>

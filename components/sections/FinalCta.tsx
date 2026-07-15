@@ -50,15 +50,15 @@ export function FinalCta() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href={COMPANY.phoneHref}
-              className="inline-flex h-[54px] items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-red-emergency px-7 font-heading font-bold text-white shadow-[var(--shadow-btn-red)] transition hover:bg-red-emergency-hover hover:-translate-y-0.5"
+              className="btn-shine btn-stroke shine-fill-red inline-flex h-[54px] items-center justify-center gap-2 rounded-[var(--radius-btn)] px-7 font-heading font-bold text-white shadow-[var(--shadow-btn-red)]"
             >
-              <Phone className="size-5" /> Call {COMPANY.phone}
+              <span className="relative z-[2] inline-flex items-center gap-2"><Phone className="size-5" /> Call {COMPANY.phone}</span>
             </a>
             <a
               href="#estimate-form"
-              className="inline-flex h-[54px] items-center justify-center gap-2 rounded-[var(--radius-btn)] border-2 border-white/60 px-7 font-heading font-bold text-white transition hover:bg-white hover:text-navy-950"
+              className="btn-shine btn-stroke inline-flex h-[54px] items-center justify-center gap-2 rounded-[var(--radius-btn)] border-2 border-white/60 px-7 font-heading font-bold text-white hover:bg-white/10"
             >
-              <ShieldCheck className="size-5" /> Request Free Estimate
+              <span className="relative z-[2] inline-flex items-center gap-2"><ShieldCheck className="size-5" /> Request Free Estimate</span>
             </a>
           </div>
 
@@ -85,9 +85,9 @@ export function FinalCta() {
               </p>
               <a
                 href={COMPANY.phoneHref}
-                className="mt-6 inline-flex h-12 items-center gap-2 rounded-[var(--radius-btn)] bg-blue-primary px-6 font-heading font-bold text-white"
+                className="btn-shine btn-stroke shine-fill-blue mt-6 inline-flex h-12 items-center gap-2 rounded-[var(--radius-btn)] px-6 font-heading font-bold text-white"
               >
-                <Phone className="size-[18px]" /> Call Now
+                <span className="relative z-[2] inline-flex items-center gap-2"><Phone className="size-[18px]" /> Call Now</span>
               </a>
             </div>
           ) : (
@@ -148,9 +148,9 @@ export function FinalCta() {
 
               <button
                 type="submit"
-                className="mt-6 inline-flex h-[54px] w-full items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-blue-primary font-heading text-base font-bold text-white shadow-[var(--shadow-btn)] transition hover:bg-blue-primary-hover"
+                className="btn-shine btn-stroke shine-fill-blue mt-6 inline-flex h-[54px] w-full items-center justify-center gap-2 rounded-[var(--radius-btn)] font-heading text-base font-bold text-white shadow-[var(--shadow-btn)]"
               >
-                Request My Estimate
+                <span className="relative z-[2]">Request My Estimate</span>
               </button>
 
               <p className="mt-3 text-center text-xs text-slate-500">

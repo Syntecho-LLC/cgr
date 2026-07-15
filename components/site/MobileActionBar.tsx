@@ -7,15 +7,15 @@ export function MobileActionBar() {
       <div className="grid grid-cols-2 gap-2.5">
         <a
           href={COMPANY.phoneHref}
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-red-emergency font-heading text-[15px] font-bold text-white"
+          className="btn-shine btn-stroke shine-fill-red inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-btn)] font-heading text-[15px] font-bold text-white"
         >
-          <Phone className="size-[18px]" /> Call Now
+          <span className="relative z-[2] inline-flex items-center gap-2"><Phone className="size-[18px]" /> Call Now</span>
         </a>
         <a
           href="#contact"
-          className="inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-btn)] bg-blue-primary font-heading text-[15px] font-bold text-white"
+          className="btn-shine btn-stroke shine-fill-blue inline-flex h-12 items-center justify-center gap-2 rounded-[var(--radius-btn)] font-heading text-[15px] font-bold text-white"
         >
-          <ShieldCheck className="size-[18px]" /> Free Estimate
+          <span className="relative z-[2] inline-flex items-center gap-2"><ShieldCheck className="size-[18px]" /> Free Estimate</span>
         </a>
       </div>
     </div>

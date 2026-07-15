@@ -75,9 +75,9 @@ export function Footer() {
           </div>
           <a
             href="#contact"
-            className="inline-flex h-12 items-center justify-center rounded-[var(--radius-btn)] bg-blue-primary px-6 font-heading font-bold text-white transition-colors hover:bg-blue-primary-hover"
+            className="btn-shine btn-stroke shine-fill-blue inline-flex h-12 items-center justify-center rounded-[var(--radius-btn)] px-6 font-heading font-bold text-white"
           >
-            Request Free Estimate
+            <span className="relative z-[2]">Request Free Estimate</span>
           </a>
         </div>
       </div>
