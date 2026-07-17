@@ -42,8 +42,8 @@ export function Hero() {
         />
       </div>
 
-      <div className="container-wide relative z-10 flex min-h-[720px] items-center pb-28 pt-32 md:min-h-[760px] lg:min-h-[800px]">
-        <div className="max-w-2xl">
+      <div className="container-wide relative z-10 flex min-h-[600px] items-start pb-16 pt-[calc(76px+35px)] sm:min-h-[720px] sm:items-center sm:pb-28 sm:pt-32 md:min-h-[760px] lg:min-h-[800px]">
+        <div className="max-w-2xl text-center sm:text-left">
           <p className="eyebrow !text-blue-electric mb-5">
             <span className="size-1.5 rounded-full bg-current" />
             California Statewide Garage Door Service
@@ -53,19 +53,19 @@ export function Hero() {
             Garage Door Repair Across California
           </h1>
 
-          <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate-200 md:text-xl">
+          <p className="mt-5 max-w-xl mx-auto sm:mx-0 text-lg leading-relaxed text-slate-200 md:text-xl">
             24/7 emergency service, same-day repairs and licensed technicians serving homes and
             businesses throughout California.
           </p>
 
           {/* Trust row */}
-          <ul className="mt-7 flex flex-wrap gap-2.5">
+          <ul className="mt-7 grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap">
             {trustRow.map(({ icon: Icon, label }) => (
               <li
                 key={label}
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-[13px] font-semibold text-white ring-1 ring-white/20 backdrop-blur"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-[13px] font-semibold text-white ring-1 ring-white/20 backdrop-blur sm:w-auto sm:justify-start"
               >
-                <Icon className="size-4 text-success" aria-hidden /> {label}
+                <Icon className="size-4 shrink-0 text-success" aria-hidden /> {label}
               </li>
             ))}
           </ul>
@@ -80,17 +80,17 @@ export function Hero() {
             </ButtonLink>
           </div>
 
-          <p className="mt-4 flex items-center gap-2 text-sm text-slate-300">
-            <span className="size-2 rounded-full bg-success animate-pulse" />
+          <p className="mt-4 flex items-center justify-center gap-2 text-sm text-slate-300 sm:justify-start">
+            <span className="size-2 shrink-0 rounded-full bg-success animate-pulse" />
             Technicians available now · Weekend and holiday service
           </p>
 
           {/* Ratings + promo */}
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             {[COMPANY.google, COMPANY.yelp].map((r, i) => (
               <div
                 key={i}
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3.5 py-2 text-sm text-white ring-1 ring-white/20 backdrop-blur"
+                className="flex w-full items-center justify-center gap-2 rounded-full bg-white/10 px-3.5 py-2 text-sm text-white ring-1 ring-white/20 backdrop-blur sm:inline-flex sm:w-auto"
               >
                 <span className="font-bold">{i === 0 ? "Google" : "Yelp"}</span>
                 <span className="flex">
@@ -104,8 +104,8 @@ export function Hero() {
               </div>
             ))}
 
-            <div className="inline-flex items-center gap-2 rounded-full bg-red-emergency px-4 py-2 text-sm font-bold text-white shadow-[var(--shadow-btn-red)]">
-              <Tag className="size-4" aria-hidden /> {COMPANY.promo}
+            <div className="flex w-full items-center justify-center gap-2 rounded-full bg-red-emergency px-4 py-2 text-sm font-bold text-white shadow-[var(--shadow-btn-red)] sm:inline-flex sm:w-auto">
+              <Tag className="size-4 shrink-0" aria-hidden /> {COMPANY.promo}
             </div>
           </div>
         </div>
