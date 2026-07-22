@@ -3,6 +3,7 @@ import { Phone, ShieldCheck, BadgeCheck, Star, Tag } from "lucide-react";
 import { COMPANY } from "@/lib/content";
 import { City } from "@/components/site/City";
 import { CouponButton } from "@/components/site/CouponButton";
+import { BrandStrip } from "@/components/sections/BrandStrip";
 
 function CurvedArrow({ className = "" }: { className?: string }) {
   return (
@@ -53,8 +54,9 @@ export function Hero() {
         />
       </div>
 
-      <div className="container-wide relative z-10 flex min-h-[600px] items-start pb-16 pt-[calc(76px+35px)] sm:min-h-[720px] sm:items-center sm:pb-28 sm:pt-32 md:min-h-[760px] lg:min-h-[88vh] xl:min-h-[90vh]">
-        <div className="max-w-2xl text-center sm:text-left">
+      <div className="relative z-10 flex min-h-[640px] flex-col sm:min-h-[760px] lg:min-h-screen">
+        <div className="container-wide flex flex-1 items-start pb-8 pt-[calc(76px+35px)] sm:items-center sm:pt-28">
+          <div className="max-w-2xl text-center sm:text-left">
           <h1 className="mt-2 font-heading font-extrabold tracking-[-0.03em] text-white text-[clamp(38px,6vw,64px)] leading-[1.06]">
             Garage Door Repair in <City fallback="California" />
           </h1>
@@ -137,7 +139,9 @@ export function Hero() {
               </div>
             ))}
           </div>
+          </div>
         </div>
+        <BrandStrip />
       </div>
     </section>
   );

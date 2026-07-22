@@ -3,7 +3,6 @@ import { Footer } from "@/components/site/Footer";
 import { MobileActionBar } from "@/components/site/MobileActionBar";
 import { CouponPopup } from "@/components/site/CouponPopup";
 import { Hero } from "@/components/sections/Hero";
-import { BrandStrip } from "@/components/sections/BrandStrip";
 import { LocalExperts } from "@/components/sections/LocalExperts";
 import { ValueProps } from "@/components/sections/ValueProps";
 import { LocationSearch } from "@/components/sections/LocationSearch";
@@ -23,7 +22,6 @@ export default function Home() {
       <Header />
       <main className="pb-16 lg:pb-0">
         <Hero />
-        <BrandStrip />
         <LocalExperts />
         <ValueProps />
         <LocationSearch />

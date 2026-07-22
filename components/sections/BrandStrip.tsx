@@ -7,39 +7,39 @@ const BRAND_LOGOS = [
 
 function Chip({ b }: { b: string }) {
   return (
-    <div className="flex h-12 w-32 shrink-0 items-center justify-center px-3">
+    <div className="flex h-10 w-28 shrink-0 items-center justify-center px-3">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`/images/brands/${b}.svg`}
         alt={`${b.replace("-", " ")} garage door brand`}
-        className="max-h-6 w-auto max-w-[96px] object-contain"
+        className="max-h-6 w-auto max-w-[90px] object-contain"
         loading="lazy"
       />
     </div>
   );
 }
 
+/** Compact brand band — designed to sit inside the hero (max ~150px tall). */
 export function BrandStrip() {
   const row = [...BRAND_LOGOS, ...BRAND_LOGOS];
   return (
-    <section aria-labelledby="brands-heading" className="bg-blue-primary py-10 md:py-12">
+    <div aria-labelledby="brands-heading" className="w-full bg-blue-primary py-4">
       <div className="container-wide">
         <h2
           id="brands-heading"
-          className="text-center font-heading text-2xl font-extrabold tracking-tight text-white sm:text-3xl"
+          className="text-center font-heading text-base font-bold tracking-tight text-white sm:text-lg"
         >
           We Repair All Garage Door &amp; Gate Brands in <City fallback="California" />
         </h2>
       </div>
 
-      {/* Seamless infinite marquee */}
-      <div className="mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
-        <div className="marquee-track flex w-max items-center gap-5">
+      <div className="mt-3 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+        <div className="marquee-track flex w-max items-center gap-4">
           {row.map((b, i) => (
             <Chip key={`${b}-${i}`} b={b} />
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 }
