@@ -1,38 +1,43 @@
-import { BRANDS } from "@/lib/content";
+import { City } from "@/components/site/City";
+
+const BRAND_LOGOS = [
+  "amarr", "chamberlain", "chi", "clopay", "craftsman", "genie", "garaga",
+  "hormann", "liftmaster", "linear", "marantec", "sommer", "wayne-dalton",
+];
+
+// Logos that are white/light and need a dark chip to be visible.
+const DARK_CHIP = new Set([
+  "amarr", "wayne-dalton", "linear", "genie", "chamberlain", "marantec", "liftmaster",
+]);
 
 export function BrandStrip() {
-  const row = [...BRANDS, ...BRANDS];
   return (
     <section aria-labelledby="brands-heading" className="border-b border-slate-200 bg-white py-12 md:py-16">
       <div className="container-cgr">
         <h2
           id="brands-heading"
-          className="text-center font-heading text-sm font-bold uppercase tracking-[0.14em] text-slate-400"
+          className="text-center font-heading text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl"
         >
-          We Repair All Major Garage Door &amp; Gate Brands
+          We Repair All Garage Door &amp; Gate Brands in <City fallback="California" />
         </h2>
 
-        {/* Desktop grid */}
-        <div className="mt-8 hidden grid-cols-3 items-center gap-x-6 gap-y-6 sm:grid md:grid-cols-5 lg:grid-cols-9">
-          {BRANDS.map((b) => (
-            <span
+        <div className="mx-auto mt-10 grid max-w-5xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          {BRAND_LOGOS.map((b) => (
+            <div
               key={b}
-              className="text-center font-heading text-xl font-extrabold tracking-tight text-slate-300 grayscale transition-all duration-200 hover:text-slate-900 hover:grayscale-0"
+              className={`flex h-20 items-center justify-center rounded-2xl px-4 ring-1 ${
+                DARK_CHIP.has(b) ? "bg-navy-950 ring-navy-900" : "bg-gradient-to-b from-slate-50 to-slate-100 ring-slate-200"
+              }`}
             >
-              {b}
-            </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/images/brands/${b}.svg`}
+                alt={`${b.replace("-", " ")} garage door brand`}
+                className="max-h-10 w-auto max-w-[120px] object-contain"
+                loading="lazy"
+              />
+            </div>
           ))}
-        </div>
-
-        {/* Mobile marquee */}
-        <div className="mt-8 overflow-hidden sm:hidden [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-          <div className="marquee-track flex w-max items-center gap-8">
-            {row.map((b, i) => (
-              <span key={i} className="font-heading text-lg font-extrabold tracking-tight text-slate-300">
-                {b}
-              </span>
-            ))}
-          </div>
         </div>
       </div>
     </section>

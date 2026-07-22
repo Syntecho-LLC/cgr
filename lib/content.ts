@@ -13,7 +13,7 @@ export const COMPANY = {
   yearsExperience: 20,
   insurance: "$2M general liability",
   google: { rating: "5.0", count: "400+" },
-  yelp: { rating: "5.0", count: "900+" },
+  ekomi: { rating: "5.0", count: "900+" },
   promo: "15% Off Any Repair for New Customers",
 };
 
@@ -216,7 +216,7 @@ export const CA_PROBLEMS = [
 
 export const TRUST_STATS = [
   { value: "5.0", label: "Google Rating", img: "/images/ic-google.png" },
-  { value: "5.0", label: "Yelp Rating", img: "/images/ic-yelp.png" },
+  { value: "5.0", label: "eKomi Rating", img: "/images/ic-yelp.png" },
   { value: "20 yrs", label: "Experience", img: "/images/ic-experience.png" },
   { value: "#1077353", label: "CSLB Licensed", img: "/images/ic-cslb.png" },
   { value: "$2M", label: "Liability Coverage", img: "/images/ic-liability.png" },
@@ -238,7 +238,7 @@ export const REVIEWS = [
     avatar: "/images/avatar-andrew.jpg",
     city: "San Jose, CA",
     rating: 5,
-    source: "Yelp",
+    source: "eKomi",
     job: "Opener installation",
     text: "Upgraded us to a quiet Wi-Fi opener. Clean install, walked us through the app, no upsell pressure at all. Genuinely the most professional home-service visit we've had. (Replace with verified review)",
   },
@@ -256,7 +256,7 @@ export const REVIEWS = [
     avatar: "/images/avatar-robert.jpg",
     city: "San Diego, CA",
     rating: 5,
-    source: "Yelp",
+    source: "eKomi",
     job: "Track repair",
     text: "Salt air had rusted our rollers and the door was grinding. They swapped to sealed rollers and galvanized hardware and explained how to keep it that way. Highly recommend. (Replace with verified review)",
   },
@@ -290,7 +290,6 @@ export const WHY_CHOOSE = [
   "20 years of garage door experience since 2006",
   "California CSLB license #1077353",
   "Service for all major garage door brands",
-  "$2M general liability insurance",
   "Full workers' compensation coverage",
   "Limited lifetime warranty on new installations",
   "100% satisfaction guarantee",

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { MapPin, ArrowUpRight } from "lucide-react";
 import { PROJECTS, PROJECT_FILTERS } from "@/lib/content";
 import { SectionHeading } from "@/components/ui/primitives";
 import { Reveal } from "@/components/ui/Reveal";
@@ -58,10 +57,7 @@ export function RecentProjects() {
                 </span>
               </div>
               <div className="p-6">
-                <p className="inline-flex items-center gap-1 text-xs font-semibold text-blue-primary">
-                  <MapPin className="size-3.5" /> {p.city}
-                </p>
-                <h3 className="mt-1.5 font-heading text-lg font-bold text-slate-900">{p.title}</h3>
+                <h3 className="font-heading text-lg font-bold text-slate-900">{p.title}</h3>
                 <dl className="mt-3 space-y-1 text-sm text-slate-600">
                   <div className="flex gap-2">
                     <dt className="font-semibold text-slate-500">Service:</dt>

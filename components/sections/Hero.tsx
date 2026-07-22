@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { Phone, ShieldCheck, BadgeCheck, Clock, Star, Tag } from "lucide-react";
 import { COMPANY } from "@/lib/content";
-import { ButtonLink } from "@/components/ui/Button";
+import { City } from "@/components/site/City";
+import { CouponButton } from "@/components/site/CouponButton";
 
 const trustRow = [
   { icon: BadgeCheck, label: `CSLB Licensed #1077353` },
@@ -50,34 +51,44 @@ export function Hero() {
           </p>
 
           <h1 className="font-heading font-extrabold tracking-[-0.03em] text-white text-[clamp(38px,6vw,64px)] leading-[1.06]">
-            Garage Door Repair Across California
+            Garage Door Repair in <City fallback="California" />
           </h1>
 
           <p className="mt-5 max-w-xl mx-auto sm:mx-0 text-lg leading-relaxed text-slate-200 md:text-xl">
             24/7 emergency service, same-day repairs and licensed technicians serving homes and
-            businesses throughout California.
+            businesses across <City fallback="California" />.
           </p>
 
-          {/* Trust row */}
-          <ul className="mt-7 grid grid-cols-2 gap-2.5 sm:flex sm:flex-wrap">
+          {/* Trust row — plain labels on mobile, chips from sm+ */}
+          <ul className="mt-7 grid grid-cols-2 gap-x-4 gap-y-2 sm:flex sm:flex-wrap sm:gap-2.5">
             {trustRow.map(({ icon: Icon, label }) => (
               <li
                 key={label}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-white/10 px-3.5 py-1.5 text-[13px] font-semibold text-white ring-1 ring-white/20 backdrop-blur sm:w-auto sm:justify-start"
+                className="flex items-center justify-center gap-2 py-1 text-[13px] font-semibold text-white sm:rounded-full sm:bg-white/10 sm:px-3.5 sm:py-1.5 sm:ring-1 sm:ring-white/20 sm:backdrop-blur"
               >
                 <Icon className="size-4 shrink-0 text-success" aria-hidden /> {label}
               </li>
             ))}
           </ul>
 
-          {/* CTAs */}
+          {/* CTAs — calls only */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href={COMPANY.phoneHref} variant="emergency" size="lg">
-              <Phone className="size-5" aria-hidden /> Call Now — {COMPANY.phone}
-            </ButtonLink>
-            <ButtonLink href="#contact" variant="outline" size="lg">
-              <ShieldCheck className="size-5" aria-hidden /> Get a Free Estimate
-            </ButtonLink>
+            <a
+              href={COMPANY.phoneHref}
+              className="btn-shine btn-stroke shine-fill-red inline-flex h-[54px] items-center justify-center gap-2 rounded-[var(--radius-btn)] px-7 font-heading text-base font-bold text-white shadow-[var(--shadow-btn-red)]"
+            >
+              <span className="relative z-[2] inline-flex items-center gap-2">
+                <Phone className="size-5" aria-hidden /> Call Now — {COMPANY.phone}
+              </span>
+            </a>
+            <a
+              href={COMPANY.phoneHref}
+              className="btn-shine btn-stroke inline-flex h-[54px] items-center justify-center gap-2 rounded-[var(--radius-btn)] border-2 border-white/60 px-7 font-heading text-base font-bold text-white backdrop-blur-sm hover:bg-white/10"
+            >
+              <span className="relative z-[2] inline-flex items-center gap-2">
+                <ShieldCheck className="size-5" aria-hidden /> Call for a Free Estimate
+              </span>
+            </a>
           </div>
 
           <p className="mt-4 flex items-center justify-center gap-2 text-sm text-slate-300 sm:justify-start">
@@ -87,12 +98,15 @@ export function Hero() {
 
           {/* Ratings + promo */}
           <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            {[COMPANY.google, COMPANY.yelp].map((r, i) => (
+            {[
+              { name: "Google", ...COMPANY.google },
+              { name: "eKomi", ...COMPANY.ekomi },
+            ].map((r) => (
               <div
-                key={i}
+                key={r.name}
                 className="flex w-full items-center justify-center gap-2 rounded-full bg-white/10 px-3.5 py-2 text-sm text-white ring-1 ring-white/20 backdrop-blur sm:inline-flex sm:w-auto"
               >
-                <span className="font-bold">{i === 0 ? "Google" : "Yelp"}</span>
+                <span className="font-bold">{r.name}</span>
                 <span className="flex">
                   {Array.from({ length: 5 }).map((_, j) => (
                     <Star key={j} className="size-3.5 fill-star text-star" aria-hidden />
@@ -104,9 +118,9 @@ export function Hero() {
               </div>
             ))}
 
-            <div className="flex w-full items-center justify-center gap-2 rounded-full bg-red-emergency px-4 py-2 text-sm font-bold text-white shadow-[var(--shadow-btn-red)] sm:inline-flex sm:w-auto">
+            <CouponButton className="flex w-full items-center justify-center gap-2 rounded-full bg-red-emergency px-4 py-2 text-sm font-bold text-white shadow-[var(--shadow-btn-red)] transition hover:bg-red-emergency-hover sm:inline-flex sm:w-auto">
               <Tag className="size-4 shrink-0" aria-hidden /> {COMPANY.promo}
-            </div>
+            </CouponButton>
           </div>
         </div>
       </div>

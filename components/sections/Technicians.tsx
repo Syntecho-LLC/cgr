@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { TECHNICIANS } from "@/lib/content";
 import { SectionHeading } from "@/components/ui/primitives";
 
@@ -34,9 +34,6 @@ export function Technicians() {
               <div className="p-4">
                 <h3 className="font-heading font-bold text-slate-900">{t.name}</h3>
                 <p className="text-sm text-blue-primary">{t.role}</p>
-                <p className="mt-1.5 inline-flex items-center gap-1 text-xs text-slate-500">
-                  <MapPin className="size-3.5" /> {t.region}
-                </p>
               </div>
             </article>
           ))}
