@@ -7,12 +7,12 @@ const BRAND_LOGOS = [
 
 function Chip({ b }: { b: string }) {
   return (
-    <div className="flex h-16 w-36 shrink-0 items-center justify-center px-4">
+    <div className="flex h-12 w-32 shrink-0 items-center justify-center px-3">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`/images/brands/${b}.svg`}
         alt={`${b.replace("-", " ")} garage door brand`}
-        className="max-h-8 w-auto max-w-[110px] object-contain"
+        className="max-h-6 w-auto max-w-[96px] object-contain"
         loading="lazy"
       />
     </div>
@@ -22,7 +22,7 @@ function Chip({ b }: { b: string }) {
 export function BrandStrip() {
   const row = [...BRAND_LOGOS, ...BRAND_LOGOS];
   return (
-    <section aria-labelledby="brands-heading" className="bg-blue-primary py-14 md:py-16">
+    <section aria-labelledby="brands-heading" className="bg-blue-primary py-10 md:py-12">
       <div className="container-wide">
         <h2
           id="brands-heading"
@@ -33,7 +33,7 @@ export function BrandStrip() {
       </div>
 
       {/* Seamless infinite marquee */}
-      <div className="mt-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
+      <div className="mt-8 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
         <div className="marquee-track flex w-max items-center gap-5">
           {row.map((b, i) => (
             <Chip key={`${b}-${i}`} b={b} />

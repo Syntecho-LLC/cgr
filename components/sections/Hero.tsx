@@ -6,9 +6,11 @@ import { CouponButton } from "@/components/site/CouponButton";
 
 function CurvedArrow({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 32 32" fill="none" className={className} aria-hidden>
-      <path d="M5 28 C 4 13 12 6 22 6" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-      <path d="M22 6 L15.5 5 M22 6 L23 12.5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    <svg viewBox="0 0 40 40" fill="none" className={className} aria-hidden>
+      {/* curved shaft rising to the top-right tip */}
+      <path d="M7 35 C 6 18 15 11 31 12" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+      {/* clear arrowhead at the tip (31,12) pointing up-right */}
+      <path d="M31 12 L20 9 M31 12 L28 23" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -51,7 +53,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="container-wide relative z-10 flex min-h-[600px] items-start pb-16 pt-[calc(76px+35px)] sm:min-h-[720px] sm:items-center sm:pb-28 sm:pt-32 md:min-h-[760px] lg:min-h-[800px]">
+      <div className="container-wide relative z-10 flex min-h-[600px] items-start pb-16 pt-[calc(76px+35px)] sm:min-h-[720px] sm:items-center sm:pb-28 sm:pt-32 md:min-h-[760px] lg:min-h-[88vh] xl:min-h-[90vh]">
         <div className="max-w-2xl text-center sm:text-left">
           <h1 className="mt-2 font-heading font-extrabold tracking-[-0.03em] text-white text-[clamp(38px,6vw,64px)] leading-[1.06]">
             Garage Door Repair in <City fallback="California" />
@@ -98,11 +100,11 @@ export function Hero() {
 
           {/* Animated same-day arrows pointing to the Call button */}
           <div className="mt-4 flex items-center justify-center gap-2 sm:justify-start">
-            <CurvedArrow className="arrow-bob size-8 shrink-0 text-star" />
+            <CurvedArrow className="arrow-bob size-11 shrink-0 text-star" />
             <span className="font-heading text-lg font-extrabold italic text-star">
               Same-Day Service Available
             </span>
-            <CurvedArrow className="arrow-bob size-8 shrink-0 -scale-x-100 text-star" />
+            <CurvedArrow className="arrow-bob size-11 shrink-0 -scale-x-100 text-star" />
           </div>
 
           <p className="mt-4 flex items-center justify-center gap-2 text-sm text-slate-300 sm:justify-start">
