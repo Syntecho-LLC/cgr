@@ -66,19 +66,30 @@ export function Hero() {
             businesses across <City fallback="California" />.
           </p>
 
-          {/* Trust row — plain labels on mobile, chips from sm+ */}
-          <ul className="mt-7 grid grid-cols-2 gap-x-4 gap-y-2 sm:flex sm:flex-wrap sm:gap-2.5">
+          {/* Mobile-only 15% offer — centered, compact, above the list */}
+          <CouponButton className="mx-auto mt-6 flex w-fit items-center gap-2.5 rounded-[var(--radius-btn)] border-2 border-dashed border-star/70 bg-white/5 px-3.5 py-2 backdrop-blur-sm sm:hidden">
+            <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-star/15 text-star">
+              <Tag className="size-4" aria-hidden />
+            </span>
+            <span className="text-left leading-tight">
+              <span className="block font-heading text-base font-extrabold text-star">15% OFF</span>
+              <span className="block text-[11px] font-semibold text-slate-200">Any Repair · New Customers</span>
+            </span>
+          </CouponButton>
+
+          {/* Trust — simple list on mobile, chips from sm+ */}
+          <ul className="mt-6 flex flex-col items-center gap-2 sm:mt-7 sm:flex-row sm:flex-wrap sm:gap-2.5">
             {trustRow.map(({ icon: Icon, label }) => (
               <li
                 key={label}
-                className="flex items-center justify-center gap-2 py-1 text-[13px] font-semibold text-white sm:rounded-full sm:bg-white/10 sm:px-3.5 sm:py-1.5 sm:ring-1 sm:ring-white/20 sm:backdrop-blur"
+                className="flex items-center gap-2 text-[13px] font-semibold text-white sm:rounded-full sm:bg-white/10 sm:px-3.5 sm:py-1.5 sm:ring-1 sm:ring-white/20 sm:backdrop-blur"
               >
                 <Icon className="size-4 shrink-0 text-success" aria-hidden /> {label}
               </li>
             ))}
           </ul>
 
-          {/* CTA + framed 15% offer (replaces the estimate button) */}
+          {/* CTA + framed 15% offer (desktop only offer next to the button) */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-start">
             {/* Call button + same-day strip (strip matches button width) */}
             <div className="flex flex-col gap-3">
@@ -101,7 +112,7 @@ export function Hero() {
               </div>
             </div>
 
-            <CouponButton className="group inline-flex h-[58px] items-center gap-3 rounded-[var(--radius-btn)] border-2 border-dashed border-star/70 bg-white/5 px-4 backdrop-blur-sm transition hover:border-star hover:bg-white/10">
+            <CouponButton className="group hidden h-[58px] items-center gap-3 rounded-[var(--radius-btn)] border-2 border-dashed border-star/70 bg-white/5 px-4 backdrop-blur-sm transition hover:border-star hover:bg-white/10 sm:inline-flex">
               <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-star/15 text-star transition group-hover:scale-110">
                 <Tag className="size-5" aria-hidden />
               </span>
@@ -112,9 +123,9 @@ export function Hero() {
             </CouponButton>
           </div>
 
-          <p className="mt-4 flex items-center justify-center gap-2 text-sm text-slate-300 sm:justify-start">
-            <span className="size-2 shrink-0 rounded-full bg-success animate-pulse" />
-            Technicians available now · Weekend and holiday service
+          <p className="mt-4 flex items-start justify-center gap-2 text-sm text-slate-300 sm:justify-start">
+            <span className="mt-[7px] size-2 shrink-0 rounded-full bg-success animate-pulse" />
+            <span>Technicians available now · Weekend and holiday service</span>
           </p>
 
           {/* Ratings */}
