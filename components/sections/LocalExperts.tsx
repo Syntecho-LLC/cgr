@@ -15,16 +15,15 @@ const bullets = [
 export function LocalExperts() {
   return (
     <section className="section bg-gradient-to-b from-warm-white to-blue-tint/40">
-      <div className="container-cgr grid gap-12 lg:grid-cols-2 lg:items-center">
-        {/* Team photo — replace with the real CGR team photo */}
-        <Reveal className="relative overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-soft)]">
+      <div className="container-cgr grid gap-12 lg:grid-cols-2 lg:items-stretch">
+        {/* Team photo — matches the text column height */}
+        <Reveal className="relative min-h-[380px] overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-soft)] lg:min-h-0">
           <Image
             src="/images/team-photo.jpg"
             alt="The California Garage Door Repair team"
-            width={1497}
-            height={1101}
+            fill
             sizes="(max-width:1024px) 100vw, 50vw"
-            className="h-full w-full object-cover"
+            className="object-cover"
           />
         </Reveal>
 
